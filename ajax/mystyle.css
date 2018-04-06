@@ -1,0 +1,18 @@
+body {
+  background-color: lightblue;
+  text-align: center;
+}
+
+
+#wrapper {
+  border-style: solid;
+   border-color: grey;
+   display: inline-block;
+   border-radius: 12px;
+   height: 300px;
+   display: center;
+}
+
+h1 {
+  border-bottom: 2px solid grey;
+}
