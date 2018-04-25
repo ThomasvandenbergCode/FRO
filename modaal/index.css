@@ -1,0 +1,73 @@
+body{
+  margin: 0;
+  box-sizing: border-box;
+  padding: 1em;
+  font-family: sans-serif;
+  background-image: url('camp-nou.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.trigger img{
+  height: 4em;
+
+}
+
+#modaalAchtergrond{
+  background-color: rgba(0,0,0,0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+}
+
+#venster{
+  width: 80vh;
+  justify-self: center;
+  align-self: center;
+  background-color: tomato;
+  max-height: 90vh;
+  overflow: auto;
+  animation: comeUp 0.7s;
+  border: 2px dotted tomato;
+  border-radius: 25%;
+  text-align: center;
+}
+@keyframes comeUp {
+  0% { transform: scale(0) rotate(0deg); }
+  50% { transform: scale(3) rotate(360deg); }
+100% { transform: scale(1) rotate(0deg); }
+}
+.inhoud{
+
+  
+}
+
+#sluitKnop{
+  border: none;
+  background: none;
+  font-size: 30px;
+  padding: 0px;
+}
+
+#sluitKnop:hover{
+  border: none;
+  background: none;
+  color: red;
+}
+
+
+#wrapper{
+    background-color: tomato;
+	width: 400px;
+	margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 25%;
+	text-align: center;
+  }
+
+.center {
+  margin-left: 100px;
+}
