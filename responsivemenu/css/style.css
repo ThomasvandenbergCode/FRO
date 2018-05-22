@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+nav {
+  background-color: lightblue;
+  color: #eee;
+}
+
+.toggle {
+  background: #000;
+  cursor: pointer;
+  padding: 1em;
+  display: block;
+  text-align: right;
+}
+
+#toggle {
+  display: none;
+}
+
+#toggle:checked ~ ul a {
+  /* breng de eigenschappen van het menu terug als #toggle gecheckt is */
+  font-size: 1em;
+  height: 1em;
+  line-height: 1em;
+  transform: scaleY(1);
+  border-bottom: 1px solid #eee;
+}
+
+#toggle:checked ~ .toggle .fa-times {
+  display: block;
+}
+
+#toggle:checked ~ .toggle .fa-bars {
+  display: none;
+}
+
+ /*verberg de .fa-times*/
+
+.fa-times {
+  display: none;
+}
+
+
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  color: #eee;
+  text-decoration: none;
+  padding: 1em;
+  /* verberg het menu */
+  border-bottom: 0px solid #eee;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  transform: scaleY(0);
+  transition: all 0.7s ease-out;
+}
+
+nav a:hover {
+  color: #fff;
+  background: #000;
+}
+
+.tweede-submenu ul {
+    padding-left: .5em;
+    border-left: 5px double #ddd;
+}
+/* het submenu verbergen */
+#nav .tweede-submenu li a {
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  transform: scaleY(0);
+  border-bottom-width: 0;
+  transition: all .5s ease-out;
+}
+/* het submenu  tonen bij een hover van .tweede-submenu */
+#nav .tweede-submenu:hover li a {
+  font-size: 1em;
+  height: 1em;
+  line-height: 1em;
+  transform: scaleY(1);
+  border-bottom-width: 1px;
+}
+
+
+.tweede-submenu > a  {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.tweede-submenu > a::after {
+  font-family: "Font Awesome\ 5 Free";
+  font-weight: 900;
+  content: "\f0d7";
+}
+
+.tweede-submenu:hover > a::after {
+  content: "\f150";
+}
+
+main {
+  padding: 1em;
+}
+
+main img {
+  max-width: 100%;
+}
+
+footer {
+  padding: 1em;
+  background-color: #333;
+  color: #ddd;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+/* opmaak bredere viewport */
+@media screen and (min-width: 40em) {
+  nav>ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  }
+  /* toggel-label verwijderen */
+  .toggle {
+    display: none;
+  }
+
+  nav a {
+    font-size: 1em;
+    height: 1em;
+    line-height: 1em;
+    transform: scaleY(1);
+  }
+
+  .tweede-submenu  {
+    position: relative;
+  }
+
+  	.tweede-submenu ul {
+      position: absolute;
+      border-left: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .tweede-submenu a {
+      background-color:  #333;
+
+    }
+      /* een lijntje links van de items van het hoofmenu, behalve de eerste */
+      nav>ul>li)>a {
+        border-left: 10px solid #eee;
+      }
+}
