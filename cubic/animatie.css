@@ -1,0 +1,32 @@
+body {
+
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr auto auto 1fr;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 1em;
+  overflow-x: hidden;
+}
+
+#knop {
+  grid-column: 2/3;
+}
+
+.vlakje {
+  margin: 0 auto;
+  grid-column: 3/4;
+  background-color: dodgerblue;
+  width: 5em;
+  height: 5em;
+  transition: transform .6s cubic-bezier(.17,.67,.71,1.2);
+  border-radius: 25%;
+  border-left: 5px solid red;
+  border-right: 5px solid green;
+  border-top: 5px solid orange;
+  border-bottom: 5px solid yellow;
+}
+
+.vlakje--schuif-uit {
+  transform: translateX(50vw);
+}
